@@ -1,4 +1,10 @@
-p{
-  color:blue;
-  text-align: center;
+@import './base/fonts';
+
+p {
+  display: block;
+  color: #00f;
+}
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
 }
