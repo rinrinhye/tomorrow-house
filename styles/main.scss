@@ -1,11 +1,6 @@
 @import './constants/colors';
+@import './constants/typography';
 
 @import './base/fonts';
 @import './base/normalize';
 @import './base/reset';
-
-$realfeelworld-_123: 1;
-
-p {
-  line-height: $realfeelworld-_123;
-}
