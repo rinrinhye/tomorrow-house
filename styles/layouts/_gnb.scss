@@ -53,6 +53,24 @@
         .gnb-icon-button {
           margin-right: 8px;
         }
+
+        .gnb-auth {
+          @include text-style(14, $secondary);
+          margin-left: 8px;
+          font-weight: 700;
+
+          a {
+            transition: color 200ms ease-in-out;
+
+            &:first-child {
+              margin-right: 12px;
+            }
+
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
       }
     }
 
