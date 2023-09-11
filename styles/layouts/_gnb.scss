@@ -6,10 +6,12 @@
     @include flexbox(between);
     height: 50px;
   }
+
   &-right {
     .button-group {
       @include flexbox(end);
     }
+
     .gnb-search-button {
       margin-right: 4px;
     }
@@ -22,18 +24,74 @@
     font-size: 24px;
     color: $secondary;
   }
+
   &-menu-button {
     color: $blue;
   }
+
   .logo {
     @include pos-center;
 
     a {
       display: block;
     }
+
     img {
       display: block;
       height: 20px;
+    }
+  }
+
+  @include responsive(T) {
+    &-wrapper {
+      height: 80px;
+    }
+
+    &-left {
+      @include flexbox(start);
+    }
+
+    &-right {
+      @include flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .logo {
+      position: static;
+      margin-right: 32px;
+      transform: none;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-right {
+      .input-group {
+        width: 264px;
+        height: 40px;
+      }
+
+      .button-group {
+        margin-left: 24px;
+      }
     }
   }
 }
