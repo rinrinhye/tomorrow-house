@@ -72,13 +72,14 @@
   position: relative;
 
   .form-input {
-    padding-right: 16px;
     padding-left: 40px;
   }
 
   .ic-search {
     @include pos-center-y;
     position: absolute;
+    left: 10px;
+    color: $secondary;
     font-size: 20px;
   }
 }
