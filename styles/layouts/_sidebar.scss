@@ -1,0 +1,87 @@
+body {
+  background-color: beige;
+}
+
+.sidebar {
+  width: 240px;
+  padding: 32px 20px;
+  background-color: $white;
+
+  &-header {
+    .logo {
+      @include flexbox(start);
+
+      a {
+        display: block;
+
+        img {
+          display: block;
+          width: auto;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px;
+    padding: 0 12px;
+  }
+
+  &-user {
+    @include text-style(14, $primary);
+    @include flexbox(start);
+
+    font-weight: 700;
+
+    a {
+      @include flexbox(start);
+      width: 100%;
+    }
+
+    .avatar-24 {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    .username {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+
+    a {
+      width: 84px;
+    }
+  }
+
+  &-nav {
+    .drawer-menu {
+      &-button {
+        @include text-style(18, $primary);
+        @include flexbox(start);
+        height: 54px;
+        font-weight: 700;
+
+        i:first-child {
+          margin-right: 8px;
+          font-size: 24px;
+        }
+
+        a {
+        }
+
+        .ic-chevron {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
