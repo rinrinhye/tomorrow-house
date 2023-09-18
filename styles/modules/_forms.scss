@@ -27,14 +27,6 @@
 .form-input,
 .form-select {
   @extend %form-base;
-
-  &:active {
-    border: 1px solid $blue;
-  }
-
-  &:hover {
-    border: 1px solid $blue;
-  }
 }
 
 // Note : select
@@ -79,7 +71,7 @@
     @include pos-center-y;
     position: absolute;
     left: 10px;
-    color: $secondary;
     font-size: 20px;
+    color: $secondary;
   }
 }
