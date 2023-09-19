@@ -1,12 +1,14 @@
 .gnb {
   $padding: 8px;
-
+  $border-size: 1px;
   position: relative;
+
+  background-color: $white;
   border-bottom: 1px solid $border;
 
   &-wrapper {
     @include flexbox(between);
-    height: 50px;
+    height: $gnb-height-sm - $border-size;
   }
 
   &-right {
@@ -37,7 +39,7 @@
 
   @include responsive(T) {
     &-wrapper {
-      height: 80px;
+      height: $gnb-height-md - $border-size;
     }
 
     &-left {
