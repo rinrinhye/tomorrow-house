@@ -66,11 +66,7 @@
     }
 
     .thumbnail-item {
-      margin-left: 0;
-
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
+      margin: 0 8px 0 0;
 
       &.tns-nav-active {
         button {
@@ -92,6 +88,35 @@
       img {
         display: block;
         width: 56px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    .thumbnail-item {
+      margin-right: 0;
+      margin-bottom: 8px;
+
+      button,
+      img {
+        width: 75px;
+        height: 75px;
       }
     }
   }
