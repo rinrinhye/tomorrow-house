@@ -29,6 +29,7 @@
   .amount {
     font-size: 16px;
   }
+
   .currency {
     @include text-style(14);
   }
@@ -39,7 +40,7 @@
     font-size: 20px;
   }
   .currency {
-    @include text-style(14);
+    @include text-style(16);
   }
 }
 
