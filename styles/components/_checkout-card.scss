@@ -1,8 +1,8 @@
 .checkout-card {
+  position: relative;
   padding: 8px 10px 8px 12px;
   background-color: $background;
   border-radius: 4px;
-  position: relative;
 
   .checkout-header {
     margin-bottom: 8px;
@@ -23,6 +23,11 @@
       font-size: 20px;
       color: $secondary;
     }
+
+    &:hover,
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   .checkout-footer {
@@ -31,6 +36,16 @@
 
   .checkout-select {
     position: relative;
+
+    &:hover {
+      select {
+        border-color: $tertiary;
+      }
+
+      i {
+        color: $secondary;
+      }
+    }
 
     select {
       width: 72px;
@@ -43,6 +58,7 @@
       border: 1px solid $border;
       border-radius: 3px;
       appearance: none;
+      transition: border-color 100ms ease-in-out;
     }
 
     .ic-caret {
@@ -51,6 +67,7 @@
       font-size: 20px;
       color: $tertiary;
       pointer-events: none;
+      transition: color 100ms ease-in-out;
     }
   }
 
