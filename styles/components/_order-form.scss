@@ -9,6 +9,14 @@
     }
   }
 
+  .order-checkouts {
+    margin-bottom: 20px;
+
+    .checkout-item:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
   .order-summary {
     @include flexbox(between);
     margin-bottom: 20px;
