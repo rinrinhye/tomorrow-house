@@ -1,5 +1,7 @@
 .product-tab {
   $grid-margin: $sm-margin + $gutter/2;
+  $product-tab-height-sm: 40px;
+  $product-tab-height-md: 54px;
 
   width: 100%;
   height: 40px;
@@ -38,6 +40,44 @@
 
     .badge {
       @include text-style(12, $secondary);
+    }
+  }
+
+  @include responsive(T) {
+    height: $product-tab-height-md;
+    background-color: $background;
+    border: 0;
+
+    &-list {
+      margin: 0;
+    }
+
+    &-item {
+      height: $product-tab-height-md;
+
+      button {
+        @include text-style(16);
+        height: $product-tab-height-md;
+      }
+
+      .badge {
+        @include text-style(16);
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-item {
+      button {
+        transition: color 200ms ease-in-out;
+      }
+
+      &:hover {
+        button {
+          color: $blue;
+        }
+      }
     }
   }
 }
