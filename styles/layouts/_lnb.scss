@@ -9,7 +9,7 @@
 
   &-list {
     @include inline-flexbox(start);
-    height: $lnb-height-sm;
+    height: $lnb-height-sm + 1px;
     min-width: 100vw;
     padding: 0 ($grid-margin - $lnb-link-padding);
     margin-left: -$grid-margin;
@@ -18,6 +18,8 @@
   }
 
   &-item {
+    height: $lnb-height-sm;
+
     &.is-active {
       a {
         color: $blue;
@@ -51,16 +53,17 @@
     border-bottom: 1px solid $border;
 
     &-list {
-      height: auto;
+      height: $lnb-height-md;
       padding: 0;
       margin-left: 0;
       border-bottom: 0;
     }
 
     &-item {
+      height: $lnb-height-md;
+
       a {
         @include text-style(14);
-
         height: $lnb-height-md;
         // padding: 13px $lnb-link-padding;
       }
