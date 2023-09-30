@@ -1,6 +1,5 @@
 .lnb {
   $lnb-link-padding: 8px;
-  $grid-margin: $sm-margin + $gutter/2;
 
   @include no-scrollbar;
   height: $lnb-height-sm;
@@ -12,7 +11,7 @@
     height: $lnb-height-sm + 1px;
     min-width: 100vw;
     padding: 0 ($grid-margin - $lnb-link-padding);
-    margin-left: -$grid-margin;
+    margin-left: -#{$grid-margin};
     white-space: nowrap;
     border-bottom: 1px solid $border;
   }
