@@ -48,6 +48,17 @@
         font-weight: 700;
         color: $blue;
       }
+
+      p {
+        @include flexbox(start);
+        color: $primary;
+
+        i {
+          margin-right: 8px;
+          font-size: 16px;
+          color: $tertiary;
+        }
+      }
     }
   }
 
