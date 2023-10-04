@@ -38,13 +38,18 @@
   &-body {
     @include text-style(13, $primary);
 
-    .question-content {
-      @include flexbox(start, start);
+    .inquiry-content {
+      position: relative;
+      padding-left: 20px;
+
+      &:first-child:not(:last-child) {
+        margin-bottom: 12px;
+      }
 
       span {
-        display: inline-block;
-        flex-shrink: 0;
-        width: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
         font-weight: 700;
         color: $blue;
       }
@@ -60,6 +65,19 @@
         }
       }
     }
+
+    .seller {
+      @include flexbox(start);
+      margin-bottom: 4px;
+
+      strong {
+        margin-right: 4px;
+      }
+
+      time {
+        @include text-style(12, $tertiary);
+      }
+    }
   }
 
   @include responsive(T) {
@@ -70,10 +88,23 @@
     &-body {
       @include text-style(14);
 
-      .question-content {
+      .inquiry-content {
+        padding-left: 24px;
+
+        &:first-child:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
         span {
           @include text-style(16);
-          width: 26px;
+        }
+      }
+
+      .seller {
+        margin-bottom: 8px;
+
+        strong {
+          @include text-style(16);
         }
       }
     }
