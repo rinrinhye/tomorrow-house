@@ -45,6 +45,7 @@
 
   &-detail {
     @include flexbox(start);
+    margin-bottom: 8px;
 
     .rating,
     .review {
