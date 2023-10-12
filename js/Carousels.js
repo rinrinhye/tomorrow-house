@@ -21,6 +21,9 @@ const userGallery = tns({
   arrowKeys: true,
   mouseDrag: true,
   preventScrollOnTouch: true,
+  navContainer: '.user-gallery .thumbnail-list',
+  navAsThumbnails: true,
+  controlsContainer: '.user-gallery-controls',
   responsive: {
     768: {
       gutter: 6,
