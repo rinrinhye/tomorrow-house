@@ -6,9 +6,7 @@ const deleteAllButton = gnbSearchHistory.querySelector(
 )
 const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
 
-const deleteButtons = Array.from(
-  gnbSearchHistoryList.querySelectorAll('.delete-button')
-)
+const deleteButtons = gnbSearchHistoryList.querySelectorAll('.delete-button')
 
 function closeGnbSearchHistory() {
   gnbSearchHistory.classList.remove('is-active')
