@@ -6,28 +6,50 @@ const deleteAllButton = gnbSearchHistory.querySelector(
 )
 const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
 
+const deleteButtons = Array.from(
+  gnbSearchHistoryList.querySelectorAll('.delete-button')
+)
+
+function closeGnbSearchHistory() {
+  gnbSearchHistory.classList.remove('is-active')
+  window.removeEventListener('click', closeGnbSearchHistory)
+}
+
 function openGnbSearchHistory() {
   if (gnbSearchHistoryList.children.length === 0) {
     return
   }
   if (!gnbSearchHistory.classList.contains('is-active')) {
-    window.addEventListener('click', closeGnbSearchHistory)
+    window.addEventListener('click', closeGnbSearchHistoryOnClickingOutside)
   }
   gnbSearchHistory.classList.add('is-active')
 }
 
-function closeGnbSearchHistory(e) {
+function closeGnbSearchHistoryOnClickingOutside(e) {
   if (!gnbSearch.contains(e.target)) {
-    gnbSearchHistory.classList.remove('is-active')
-    window.removeEventListener('click', closeGnbSearchHistory)
+    closeGnbSearchHistory()
   }
 }
 
 function deleteAllSearchHistoryItems() {
   gnbSearchHistoryList.innerHTML = ''
-  gnbSearchHistory.classList.remove('is-active')
+  closeGnbSearchHistory()
+}
+
+function deleteSearchHistoryItem(e) {
+  e.stopPropagation()
+  const itemToDelete = this.parentNode
+  gnbSearchHistoryList.removeChild(itemToDelete)
+
+  if (gnbSearchHistoryList.children.length === 0) {
+    closeGnbSearchHistory()
+  }
 }
 
 gnbSearchInput.addEventListener('focus', openGnbSearchHistory)
 
 deleteAllButton.addEventListener('click', deleteAllSearchHistoryItems)
+
+deleteButtons.forEach((button) => {
+  button.addEventListener('click', deleteSearchHistoryItem)
+})
