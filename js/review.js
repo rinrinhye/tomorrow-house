@@ -1,5 +1,5 @@
-const reviewLikeButtonList = Array.from(
-  document.querySelectorAll('.review-card-footer button')
+const reviewLikeButtonList = document.querySelectorAll(
+  '.review-card-footer button'
 )
 
 const HELPFUL = '도움됨'
